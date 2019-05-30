@@ -1,0 +1,95 @@
+html {
+    height: 100vh;
+    cursor: crosshair;
+}
+
+.allDone {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 10em;
+}
+
+.target {
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    /* transition-duration: 20ms;
+    transition-timing-function: ease-out; */
+    animation: cursorAnim .5s infinite alternate;
+}
+
+.target::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(3);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid red;    
+}
+
+#bag {
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url(glove.png) center no-repeat;
+    background-size: 80%;
+}
+
+#bag.burst {
+    background: url(/img/bag-burst.pnd) center no-repeat;
+    background-size: 80%;
+}
+
+#health {
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto 20px auto;
+}
+
+#health div {
+    height: 20px;
+    background: crimson;
+}
+
+#controls{
+    width: 120px;
+    margin: 0 auto;
+}
+
